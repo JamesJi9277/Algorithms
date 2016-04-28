@@ -8,7 +8,8 @@
 
 // return [1, 2]
 
-// Note
+// Note: test insert
+ 
 // You may assume that each input would have exactly one solution
 
 // Challenge
