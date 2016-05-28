@@ -14,9 +14,7 @@
 
 // Challenge
 // Either of the following solutions are acceptable:
- 
-
-
+//this is a test of git status
 
 
 
