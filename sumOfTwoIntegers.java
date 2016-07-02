@@ -1,3 +1,4 @@
+//normal solution
 public class Solution {
     public int getSum(int a, int b) {
         long res = 0;
@@ -11,5 +12,20 @@ public class Solution {
         else {
             return (int)res;
         }
+    }
+}
+
+//bit manipulation
+public class Solution {
+    public int getSum(int a, int b) {
+        int x = a ^ b;
+        int y = a & b;
+        while(y != 0) {
+            int xx = x;
+            int yy = y << 1;
+            x = xx ^ yy;
+            y = xx & yy;
+        }
+        return x;
     }
 }
