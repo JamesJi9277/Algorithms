@@ -18,14 +18,15 @@ public class Solution {
 //bit manipulation
 public class Solution {
     public int getSum(int a, int b) {
-        int x = a ^ b;
-        int y = a & b;
-        while(y != 0) {
-            int xx = x;
-            int yy = y << 1;
-            x = xx ^ yy;
-            y = xx & yy;
+        int sum = a ^ b;
+        int carry = a & b;
+        int temp = 0;
+        while(carry != 0) {
+            carry <<= 1;
+            temp = sum;
+            sum ^= carry;
+            carry &= temp;
         }
-        return x;
+        return sum;
     }
 }
