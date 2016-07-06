@@ -45,6 +45,43 @@ public class Solution {
     	}
     	return dummy.next;
     }
+    private ListNode addTwo1(ListNode head1, ListNode head2) {
+    	if(head1 == null || head2 == null) {
+    		return head1 == null ? head2 : head1;
+    	}
+    	ListNode dummy = new ListNode(0);
+    	ListNode head = dummy;
+    	int carry = 0;
+    	while(head1 != null && head2 != null) {
+    		int digit = (head1.val + head2.val + carry) % 10;
+    		carry = (head1.val + head2.val + carry) / 10;
+    		ListNode next = new ListNode(digit);
+    		head.next = next;
+    		head = next;
+    		head1 = head1.next;
+    		head2 = head2.next;
+    	}
+    	while(head1 != null) {
+    		int digit = (head1.val + carry) % 10;
+    		carry = (head1.val + carry) / 10;
+    		head.next = new ListNode(digit);
+    		head = head.next;
+    		head1 = head1.next;
+    	}
+    	while(head2 != null) {
+    		int digit = (head2.val + carry) % 10;
+    		carry = (head2.val + carry) / 10;
+    		head.next = new ListNode(digit);
+    		head = head.next;
+    		head2 = head2.next;
+    	}
+    	if(carry == 1) {
+    		ListNode tail = new ListNode(1);
+    		head.next = tail;
+    		tail.next = null;
+    	}
+    	return dummy.next;
+    }
 }
 
 
