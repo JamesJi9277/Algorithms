@@ -1,3 +1,4 @@
+//A square number is 1+3+5+7+...
 public class Solution {
 	public boolean isPerfectSquare(int n) {
 		int i = 1;
