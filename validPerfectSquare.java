@@ -12,10 +12,44 @@ public class Solution {
 
 public class Solution {
 	public boolean isPerfectSquare(int n) {
-		long r = n;
-		while(r * r > n) {
-			r = (r + n / r) / 2;
+		long end = n;
+		while(end * end > n) {
+			end = (end + n / end) / 2;
 		}
-		return r * r == n;
+		return end * end == n;
+	}
+}
+
+public class Solution {
+	public boolean isPerfectSquare(int n) {
+		if(n < 1) {
+			return false;
+		}
+		if(n == 1) {
+			return true;
+		}
+		long start = 1;
+		long end = n;
+		while(start + 1 < end) {
+			long mid = start + (end - start) / 2;
+			if(mid * mid == (long)n) {
+				return true;
+			}
+			else if(mid * mid > (long)n) {
+				end = mid;
+			}
+			else {
+				start = mid;
+			}
+		}
+		if(start * start == (long)n) {
+			return true;
+		}
+		else if(end * end == (long)n) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 }
