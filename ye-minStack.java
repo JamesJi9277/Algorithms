@@ -4,7 +4,8 @@ class MinStack {
     public void push(int x) {
         if(stack2.isEmpty() || stack2.peek() >= x) {
         	stack2.push(x);
-        }
+        
+}
         stack1.push(x);
     }
 

@@ -8,6 +8,8 @@ candidate score: 11, yes
 candidate score: 7, no
 candidate score: 0, yes
 
+
+
 import java.util.*;
 public class can {
 	public boolean isValid(int score, int[] scores) {
